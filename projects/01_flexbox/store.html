@@ -1,0 +1,113 @@
+<!doctype html>
+<html class="flexbox flexbox-store">
+<head>
+  <title>Flexbox: flex, align, order</title>
+  <link rel="stylesheet" href="../shared/normalize.css" media="all" />
+  <link rel="stylesheet" href="../shared/demo-styles.css" media="all" />
+  <style>
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  h2{
+    font-size: 1em;
+  }
+  
+  .container {
+    /* STEP 1 */
+    /* Set display: flex; to turn the element into a flex-container. */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 70%;
+    background: papayawhip;
+  }
+  
+  .container .box{
+    flex: 1 0 200px;
+    display: flex;
+    flex-flow: column nowrap;
+    
+    border: 1px solid lime;
+    padding: 1.5em;
+  }
+  
+  .box img{
+    align-self: center;
+
+    width: 114px;
+  }
+  
+  .box:nth-child(1){
+/*    min-width: 100%;*/
+/*    order: 2;*/
+  }
+  
+  .box p{
+    font-size: 0.85em;
+  }
+  
+  .box .buy{
+    align-self: center;
+    margin-top: auto;
+    
+    padding: 0.5em;
+    width: 100px;
+    text-align: center;
+    background: lightgreen;
+  }
+  
+  </style>
+</head>
+<body>
+  <h1>Flex, align, order</h1>
+  
+  <div class="container">
+    <div class="box">
+      <img src="images/mbp13.png" alt="" />
+      <h2>13-inch: 2.5GHz</h2>
+      <p>
+        2.5GHz dual-core Intel Core i5
+        Turbo Boost up to 3.1GHz
+        4GB 1600MHz memory
+        500GB 5400-rpm hard drive1
+        Intel HD Graphics 4000
+        Built-in battery (7 hours)
+      </p>
+      <a href="#" class="buy">Buy</a>
+    </div>
+    <div class="box">
+      <img src="images/mbp13.png" alt="" />
+      <h2>13-inch: 2.4GHz
+      with Retina display</h2>
+      <p>
+        2.4GHz dual-core Intel Core i5
+        Turbo Boost up to 2.9GHz
+        4GB 1600MHz memory
+        128GB PCIe-based flash storage1
+        Intel Iris Graphics
+        Built-in battery (9 hours)
+      </p>
+      <a href="#" class="buy">Buy</a>
+    </div>    
+    <div class="box">
+      <img src="images/mbp15.png" alt="" />
+      <h2>15-inch: 2.3GHz
+      with Retina display</h2>
+      <p>
+        2.3GHz quad-core Intel Core i7
+        Turbo Boost up to 3.5GHz
+        16GB 1600MHz memory
+        512GB PCIe-based flash storage 1
+        Intel Iris Pro Graphics
+        NVIDIA GeForce GT 750M
+        with 2GB GDDR5 memory
+        Built-in battery (8 hours)
+      </p>
+      <a href="#" class="buy">Buy</a>
+    </div>    
+  </div>
+  
+</body>
+</html>
