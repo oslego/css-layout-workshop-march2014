@@ -17,15 +17,28 @@
     /* STEP 1 */
     /* Set display: flex; to turn the element into a flex-container. */
     display: flex;
+    
+    /* STEP 2 */
+    /* Set flex-flow: row wrap; to arrange flex-items on a row, 
+       and allow them to wrap if they don't fit */
     flex-flow: row wrap;
-    justify-content: space-between;
-    width: 70%;
+    
     background: papayawhip;
   }
   
   .container .box{
+    /* STEP 2 */
+    /* Set flex: 1 0 200px; to evenly distribute available space to flex-items,
+       but give them a flex-basis (min-width) of 200px. */
     flex: 1 0 200px;
+    
+    /* STEP 3 */
+    /* Set display: flex; to turn turn the flex-item into a flex-container for its children */
     display: flex;
+    
+    /* STEP 4 */
+    /* Set flex-flow: column nowrap; to arrange the child flex-items on a column, 
+       and don't allow them to wrap if they don't fit */
     flex-flow: column nowrap;
     
     border: 1px solid lime;
@@ -33,8 +46,11 @@
   }
   
   .box img{
+    /* STEP 5 */
+    /* Set align-self: center; to align the image to the center on the cross axis
+       (cross-axis is horizontal in this case, because of flex-flow: column;) */
     align-self: center;
-
+    
     width: 114px;
   }
   
@@ -48,7 +64,13 @@
   }
   
   .box .buy{
+    /* STEP 6 */
+    /* Set align-self: center; to align to the center on the cross axis (horizontal) */
     align-self: center;
+    
+    /* STEP 7 */
+    /* Set margin-top: auto; to pin the buy button to the bottom. */
+    /* Makes it look even across boxes, because all boxes are equal height. */
     margin-top: auto;
     
     padding: 0.5em;
