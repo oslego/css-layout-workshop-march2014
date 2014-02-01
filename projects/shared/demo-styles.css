@@ -20,6 +20,16 @@ html.flexbox, .flexbox body{
   padding: 1em;
 }
 
+/* Styls for columns demo */
+.flexbox-columns .column{
+  padding: 1em;
+  background: #B5F8D7;
+}
+
+.flexbox-columns .column:last-child{
+  background: #7ED6AB;
+}
+
 /* Styles for pin demo */
 .flexbox-pin .menu,
 .flexbox-pin .message{
