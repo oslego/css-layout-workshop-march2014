@@ -1,0 +1,71 @@
+<!doctype html>
+<html class="flexbox flexbox-pin">
+<head>
+  <title>Flexbox: align menu items</title>
+  <link rel="stylesheet" href="../shared/demo-styles.css" media="all" />
+  <style>
+  
+  .menu{
+    /* STEP 1 */
+    /* Set display: flex; to turn the element into a flex-container. */
+    display: flex;
+
+    background-color: rgba(55, 167, 182, 0.43);
+  }
+  
+  .menu li:last-child{
+    /* STEP 2 A */
+    /* Set margin-left: auto; to make the last flex-item use all empty space for its left margin */
+    /* In this context, the last element will pin to the right. */
+    margin-left: ;
+  }
+  
+  .menu li:nth-last-child(2){
+    /* STEP 2 B */
+    /* Set margin-left: auto; to make the second last flex-item use all empty space for its left margin. */
+    /* IMPORTANT: remove the property from the :last-child above, 
+       otherwhise the last two will share the empty space for the margin*/
+    margin-left: auto;
+  }
+    
+  .message{
+    /* STEP 3 */
+    /* Set display: flex; to turn the element into a flex-container. */
+    display: flex;
+    
+    background: #FFF9B2;
+  }
+  
+  .message .close{
+    /* STEP 4 */
+    /* Set margin-left: auto; to make the close button pin to the right. */
+    margin-left: auto;
+    
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    padding-top: 1em;
+    display: block;
+    background: url(images/close15.svg) center center / contain;
+  }
+  
+  </style>
+</head>
+<body>
+  <h1>Use case: pin to right</h1>
+
+  <ul class="menu">
+    <li><a href="">Home</a></li>
+    <li><a href="">About</a></li>
+    <li><a href="">Support</a></li>
+    <li><a href="">Create account</a></li>
+    <li><a href="">Sign in</a></li>
+  </ul>
+  
+  <div class="message">
+    I'm a warning message. You should close me.
+    <a href="#" class="close">close</a>
+  </div>
+  
+</body>
+</html>
