@@ -1,3 +1,9 @@
+@import 'normalize.css';
+
+* {
+  box-sizing: border-box;
+}
+
 html.flexbox, .flexbox body{
   width: 100%;
   height: 100%;
@@ -7,6 +13,37 @@ html.flexbox, .flexbox body{
 .flexbox body{
   padding: 1em 2em;
 }
+
+/* Styles for center demo */
+.flexbox-center h1{
+  background: #7ED6AB;
+  padding: 1em;
+}
+
+/* Styles for pin demo */
+.flexbox-pin .menu,
+.flexbox-pin .message{
+  border-radius: 4px;
+} 
+
+.flexbox-pin .menu{
+  margin-bottom: 3rem;
+  list-style: none;
+  padding: 0.5em 1em;
+}
+
+.flexbox-pin .message{
+  padding: 1em;
+}
+
+.flexbox-pin .menu li{
+  padding: 0.5em 1em;
+}
+
+.flexbox-pin .menu a{
+  color: #31518A;
+}
+
 
 /* Styles for directions demo */
 .flexbox-directions .container div{
@@ -30,4 +67,3 @@ html.flexbox, .flexbox body{
   font-size: 2em;
   font-weight: bold;
 }
-
