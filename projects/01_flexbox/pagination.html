@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="flexbox flexbox-pagination">
+<head>
+  <title>Flexbox: flex, align, order</title>
+  <link rel="stylesheet" href="../shared/normalize.css" media="all" />
+  <link rel="stylesheet" href="../shared/demo-styles.css" media="all" />
+  <style>
+  
+  .container{
+    margin: 0 auto;
+    background: #eee;
+    padding: 1em;
+  }
+  
+  nav{
+    /* STEP 1 */
+    /* Set display: flex; to turn the element into a flex-container. */
+    display: flex;
+    
+    /* STEP 2 */
+    /* Set flex-flow: row wrap; to allow flex-items to wrap to the next row. */
+    /* When flex-items can't all fit on the same row, some will shift to the next row. */
+    flex-flow: row wrap;
+    
+    /* STEP 3 */
+    /* Set justify-content: center; to align flex-items to the center of the row (main axis). */
+    justify-content: center;
+    
+    /* STEP 4 */
+    /* Set justify-content: space-around; to distribute free space around all flex-items (includes the ends). */
+    justify-content: space-around;
+    
+    /* STEP 5 */
+    /* Set justify-content: space-between; to distribute free space between all flex-items (ignores the ends). */
+    justify-content: space-between;
+  }
+  
+  nav a{
+    padding: 0.5em 1em;
+    border: 1px solid black;
+  }
+  
+  @media screen and (max-width: 35em){
+    
+    nav a:last-child{
+      /* STEP 6 */
+      /* Set order: -1; to shift the last flex-item before all others */
+      order: -1;
+
+      text-align: right;
+    }
+    
+    nav a:first-child{
+      /* STEP 7 */
+      /* Set order: -1; to shift the first flex-item before the already shifted last one */
+      order: -1;
+    }
+    
+    nav a:last-child,
+    nav a:first-child{
+      /* STEP 8 */
+      /* Set width: 50%; to use all space on the current row and force other flex-items wrap to the next row. */
+      width: 50%;
+      margin-bottom: 1em;
+    }
+    
+    
+    /* BONUS */
+    /* Set width: 25%; on both :first-child and :last-child,
+       Then, set margin-right: 25% on :first-child and margin-left: 25% on :last-child
+       to space-out the "prev" and "next" buttons on their own row*/
+  }
+  
+  
+  </style>
+</head>
+<body>
+  <h1>Responsive Pagination</h1>
+  
+  <div class="container">
+    
+    <nav>
+      <a href="#">Prev</a>
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">Next</a>
+      <!-- BONUS: add more pages to see how the layout adapts -->
+    </nav>
+    
+  </div>
+  
+</body>
+</html>
