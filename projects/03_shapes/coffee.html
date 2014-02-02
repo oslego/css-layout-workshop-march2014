@@ -1,0 +1,56 @@
+<!doctype html>
+<html id='shapes-coffee' class="shapes">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Shapes: basic shapes</title>
+  <base href="../shared/" />
+  <link rel="stylesheet" href="demo-styles.css" media="all" />
+  <style>
+    
+    .coffee-cup{
+      /* STEP 1 */
+      /* Set shape-outside: circle(50%, 50%, 200px); to wrap the outside content around a circle. */
+      /* The parameters mean: x, y for the circle center (50%, 50%) and the radius (200px). */
+      shape-outside: circle(50%, 50%, 200px);
+      
+      float: left;
+      width: 400px;
+      height: 400px;
+    }
+    
+    .coffee-stain{
+      /* STEP 2 */
+      /* Set shape-inside: circle(50%, 50%, 150px); to wrap the inside content around a circle. */
+      shape-inside: circle(50%, 50%, 150px);
+
+      /* STEP 3 */
+      /* Set shape-padding: 1.6em; to leave a gap between the shape and the content. */
+      shape-padding: 1.6em;
+      
+      /* STEP 4 */
+      /* Set shape-outside: circle(50%, 50%, 150px); to wrap the outside content around a circle. */
+      shape-outside: circle(50%, 50%, 150px);
+      
+      float: right;
+      width: 300px;
+      height: 300px;
+    }
+    
+  </style>
+</head>
+  <body>
+  
+  <article>
+    <h1>Basic CSS Shapes</h1>
+    <img src="images/espresso.png" alt="" class="coffee-cup" />
+    <p class="coffee-stain">Shapes are defined in simple, practical and reusable ways, and they can affect the entire layout of a web page</p>
+    <p>
+      Web designers have long been forced to create within the constraints of the block. Since most daring ventures into non-rectangular layout using CSS and HTML end in frustration, most content on the web is still trapped in simple boxes. Border-radius and creative uses of CSS transform properties only create the illusion of shapes; they don't actually affect the content layout as expected. A circle carved with border-radius is still a rectangle in disguise.
+    </p>
+    <p>
+      All this is about to change with the implementation of CSS Shapes, a new CSS feature which allows web designers to wrap content inside and around custom shapes. Shapes are defined in simple, practical and reusable ways, and, unlike most CSS hacks that just simulate shapes, they can affect the entire layout of a web page.
+    </p>
+  </article>
+  
+</body>
+</html>
