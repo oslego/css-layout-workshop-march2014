@@ -1,17 +1,10 @@
 <!doctype html>
 <html class="flexbox flexbox-store">
 <head>
+  <meta charset="UTF-8"/>
   <title>Flexbox: flex, align, order</title>
   <link rel="stylesheet" href="../shared/demo-styles.css" media="all" />
   <style>
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  h2{
-    font-size: 1em;
-  }
   
   .container {
     /* STEP 1 */
@@ -22,112 +15,95 @@
     /* Set flex-flow: row wrap; to arrange flex-items on a row, 
        and allow them to wrap if they don't fit */
     flex-flow: row wrap;
-    
-    background: papayawhip;
   }
   
-  .container .box{
-    /* STEP 2 */
+  .box{
+    /* STEP 3 */
     /* Set flex: 1 0 200px; to evenly distribute available space to flex-items,
        but give them a flex-basis (min-width) of 200px. */
     flex: 1 0 200px;
     
-    /* STEP 3 */
+    /* STEP 4 */
     /* Set display: flex; to turn turn the flex-item into a flex-container for its children */
     display: flex;
     
-    /* STEP 4 */
+    /* STEP 5 */
     /* Set flex-flow: column nowrap; to arrange the child flex-items on a column, 
        and don't allow them to wrap if they don't fit */
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     
-    border: 1px solid lime;
-    padding: 1.5em;
+    margin: 1em;
   }
   
   .box img{
-    /* STEP 5 */
+    /* STEP 6 */
     /* Set align-self: center; to align the image to the center on the cross axis
        (cross-axis is horizontal in this case, because of flex-flow: column;) */
     align-self: center;
     
-    width: 114px;
-  }
-  
-  .box:nth-child(1){
-/*    min-width: 100%;*/
-/*    order: 2;*/
-  }
-  
-  .box p{
-    font-size: 0.85em;
+    width: 180px;
+    margin-bottom: 1em;
   }
   
   .box .buy{
-    /* STEP 6 */
+    /* STEP 7 */
     /* Set align-self: center; to align to the center on the cross axis (horizontal) */
     align-self: center;
     
-    /* STEP 7 */
+    /* STEP 8 */
     /* Set margin-top: auto; to pin the buy button to the bottom. */
     /* Makes it look even across boxes, because all boxes are equal height. */
     margin-top: auto;
+  }
+  
+  .box:last-child {
+    /* BONUS: */
+    /* Set order: -1; to shift the last flex-item ahead of all others. */
+/*    order: -1;*/
     
-    padding: 0.5em;
-    width: 100px;
-    text-align: center;
-    background: lightgreen;
+    /* BONUS: */
+    /* Set min-width: -webkit-calc(100% - 2em); so the element uses all space on its row. */
+    /* NOTE: using calc() to remove 2em of margin (left+right) that is set on all .box elements. */
+/*    min-width: calc(100% - 2em);*/
+  }
+  
+  .box h2, 
+  .box .price {
+    /* BONUS: Set order: -1; to shift the title and price ahead of the image. */
+/*    order: -1;*/
   }
   
   </style>
 </head>
 <body>
-  <h1>Flex, align, order</h1>
+  <h1>Online Shop Layout</h1>
   
   <div class="container">
+    
     <div class="box">
-      <img src="images/mbp13.png" alt="" />
-      <h2>13-inch: 2.5GHz</h2>
-      <p>
-        2.5GHz dual-core Intel Core i5
-        Turbo Boost up to 3.1GHz
-        4GB 1600MHz memory
-        500GB 5400-rpm hard drive1
-        Intel HD Graphics 4000
-        Built-in battery (7 hours)
-      </p>
+      <img src="images/duck.jpg" alt="" />
+      <h2>Rubber Duck</h2>
+      <span class="price">£0.99</span>
+      <p>Squeaks when squeezed. Never shirnks. Difficult to chew.</p>
       <a href="#" class="buy">Buy</a>
     </div>
+    
     <div class="box">
-      <img src="images/mbp13.png" alt="" />
-      <h2>13-inch: 2.4GHz
-      with Retina display</h2>
-      <p>
-        2.4GHz dual-core Intel Core i5
-        Turbo Boost up to 2.9GHz
-        4GB 1600MHz memory
-        128GB PCIe-based flash storage1
-        Intel Iris Graphics
-        Built-in battery (9 hours)
-      </p>
+      <img src="images/owl.jpg" alt="" />
+      <h2>Owl Pillow</h2>
+      <span class="price">£5.99</span>
+      <p>Purple plush with silky belly. Fluffy and huggable. Great companion for sleeping or used as a door-stop.</p>
       <a href="#" class="buy">Buy</a>
-    </div>    
+    </div>
+        
     <div class="box">
-      <img src="images/mbp15.png" alt="" />
-      <h2>15-inch: 2.3GHz
-      with Retina display</h2>
-      <p>
-        2.3GHz quad-core Intel Core i7
-        Turbo Boost up to 3.5GHz
-        16GB 1600MHz memory
-        512GB PCIe-based flash storage 1
-        Intel Iris Pro Graphics
-        NVIDIA GeForce GT 750M
-        with 2GB GDDR5 memory
-        Built-in battery (8 hours)
-      </p>
+      <img src="images/slippers.jpg" alt="" />
+      <h2>Bunny Slippers</h2>
+      <span class="price">£2.50</span>
+      <p>Fluffy white slippers hug your feet like they've missed them for so, so long. Never misplaced, can be worn on either foot.</p>
       <a href="#" class="buy">Buy</a>
-    </div>    
+    </div>
+        
   </div>
   
 </body>
