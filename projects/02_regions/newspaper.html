@@ -1,0 +1,79 @@
+<!doctype html>
+<html id='regions-news' class="reg">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Regions: newspaper layout</title>
+  <base href="../shared/" />
+  <link rel="stylesheet" href="demo-styles.css" media="all" />
+  <script src="modernizr.custom.js"></script>
+  <style>
+
+    .template {
+      /* By default, hide the template for browsers with no support for CSS Regions. */
+      display: none;
+    }
+    
+    /* Modernizr will set <html class="regions">, if CSS Regions are supported. */
+    .regions .template{
+      /* Reveal and use the template for browsers with CSS Regions. */
+      display: flex;
+      height: 100%;
+    }
+    
+    .regions article{
+      /* STEP 1 */
+      /* Set -webkit-flow-into: content; to collect the contents of <article> into a named flow. */
+      /* Until we use that named flow, the effect is similar to display: none; */
+      -webkit-flow-into: content;
+    }
+    
+    .regions .box{
+      /* STEP 2 */
+      /* Set -webkit-flow-from: content; to put the content from the named flow into .box elements. */
+      /* The .box elements become 'regions'. Content will flow from one region to another. */
+      -webkit-flow-from: content;
+      
+      /* STEP 3 */
+      /* Set height: 50%; halve the height of the flex-items become regions */
+      height: 50%;
+      
+      /* The flex-items acting as regions will get an even share of all available space. */ 
+      flex: 1 0 0;
+      flex-flow: row wrap;
+    }
+    
+    .regions .box:nth-child(2) {
+      /* STEP 4 */
+      /* Set flex-grow: 2; to make the second region grow twice as much as others. */
+      flex-grow: 2;
+      
+      /* STEP 5 */
+      /* Set margin-top: auto; to pin the region to the bottom. */
+      margin-top: auto;
+    }
+    
+  </style>
+</head>
+<body> 
+  
+  <article>
+    <h1>CSS Regions</h1>
+    <p>
+      With Regions, you can use CSS properties to flow content into existing styled containers, specifying any container order you choose, regardless of their position on the page. Create visually stunning responsive layouts for mobile and desktop content today.
+    </p>
+    <p>
+      By allowing text to automatically flow from one box to another, CSS Regions bring the power and flexibility of complex layout to the web. This makes it easier to build pages with layout similar to traditional newspapers and magazines, but it goes beyond that.
+    </p>
+    <p>
+      Regions work by disconnecting the visual rendering of elements from their order in the DOM. This gives a hint to a potential new use case – building adaptive UI for web applications. I do emphasize on the adaptive term because this accounts for the user and device context.
+    </p>
+  </article>
+  
+  <div class="template">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  
+</body>
+</html>

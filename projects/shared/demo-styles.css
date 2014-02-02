@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-html.flexbox, .flexbox body{
+html, body{
   width: 100%;
   height: 100%;
   font-size: 18px;
@@ -132,4 +132,35 @@ html.flexbox, .flexbox body{
 .flexbox-store .price{
   display: block;
   color: crimson;
+}
+
+
+/* Modernizr + feature detection warning message*/
+html[class~=no-regions]::before{
+  padding: 2em;
+  display: block;
+  content: "This browser does not support CSS Regions. See: http://html.adobe.com/webplatform/enable/";
+  background: #ffc;
+}
+
+.reg body{
+  padding: 1em 2em;
+}
+
+.reg article{
+  font-size: 120%;
+  font-family: Palatino, Georgia;
+  line-height: 1.4em;
+}
+
+.reg article h1{
+  line-height: 1em;
+  margin-top: 0;
+}
+
+/* Regions news layout demo */
+#regions-news .box{
+  padding: 1.5em;
+  background: #eee;
+  border: 5px solid white;
 }
