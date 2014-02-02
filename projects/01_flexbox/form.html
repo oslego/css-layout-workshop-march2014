@@ -10,38 +10,38 @@
     /* STEP 1 */
     /* Set display: flex; to turn the element into a flex-container. */
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: stretch;
-    width: 50%;
-    height: 100px;
+    
+    /* STEP 2 */
+    /* Set align-items: center; to align flex-items to the center of the cross-axis (vertical) */
+    align-items: center;
+  }
+  
+  input[type="email"]{
+    /* STEP 3 */
+    /* Set flex: 1 0 250px; to make the input field absorb all unused space, but use a min-width of 250px */
+    flex: 1 0 250px;
+    
+    /* STEP 4 */
+    /* Set margin: 0 1em; to leave a gap between the input and its siblings. */
+    margin: 0 1em;
+    /* Observe how the input field auto-sizes so everything still fits inside the flex-container */
+  }
+  
+  input[type="submit"]{
+    /* STEP 5 */
+    /* Set align-self: stretch; to make only this flex-item stretch on the cross-axis (vertical) */
+    align-self: stretch;
+  }
 
-    margin: 0 auto;
-    background: #eee;
-    padding: 1em;
-  }
-  
-  input[name="search"]{
-    flex: 1 0 100px;
-  }
-  
-  a{
-    padding: 0.5em;
-  }
-  
-  .submit{
-    background: salmon;
-  }
-  
-  
   </style>
 </head>
 <body>
-  <h1>Form add-on</h1>
+  <h1>Auto-sizing input</h1>
   
-  <form action="#">
-    <input type="text" name="search" placeholder="Find great coffee in London"/>
-    <a href="#" class="submit">Search</a>
+  <form>
+    <label for="newsletter">Subscribe to the newsletter:</label>
+    <input type="email" id="newsletter" placeholder="rubber.duck@quack.com"/>
+    <input type="submit" value="Subscribe" />
   </form>
   
 </body>

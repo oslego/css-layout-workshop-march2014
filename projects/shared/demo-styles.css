@@ -78,6 +78,25 @@ html, body{
   font-weight: bold;
 }
 
+/* Styles for form */
+
+
+.flexbox-form form {
+  background: #D1E0D1;
+  padding: 1em;
+  border-radius: 3px;
+}
+
+.flexbox-form input[type="email"] {
+  padding-left: 1em;
+  height: 50px;
+}
+.flexbox-form input[type="submit"] {
+  padding: 0 1em;
+  background: #FF6B25;
+  border: none;
+}
+
 /* Styles for pagination */
 .flexbox-pagination .container{
   margin: 0 auto;
