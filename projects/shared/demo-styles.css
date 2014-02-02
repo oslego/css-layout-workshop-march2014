@@ -78,6 +78,26 @@ html.flexbox, .flexbox body{
   font-weight: bold;
 }
 
+/* Styles for pagination */
+.flexbox-pagination .container{
+  margin: 0 auto;
+  background: #D65B5A;
+  padding: 1em;
+  border-radius: 3px;
+} 
+
+.flexbox-pagination a{
+  color: white;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.59);
+  border-radius: 3px;
+}
+
+.flexbox-pagination a:hover{
+  background-color: rgba(255, 255, 255, 0.26);
+}
+
+
 /* Styles for store demo */
 .flexbox-store h2{
   font-size: 1.2em;
