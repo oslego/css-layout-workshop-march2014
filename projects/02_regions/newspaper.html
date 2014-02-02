@@ -17,6 +17,7 @@
     .regions .template{
       /* Reveal and use the template for browsers with CSS Regions. */
       display: flex;
+      flex-flow: row wrap;
       height: 100%;
     }
     
@@ -39,7 +40,6 @@
       
       /* The flex-items acting as regions will get an even share of all available space. */ 
       flex: 1 0 0;
-      flex-flow: row wrap;
     }
     
     .regions .box:nth-child(2) {

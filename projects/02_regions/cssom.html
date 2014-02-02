@@ -1,0 +1,134 @@
+<!doctype html>
+<html id='regions-cssom' class="reg">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Regions: newspaper layout</title>
+  <base href="../shared/" />
+  <link rel="stylesheet" href="demo-styles.css" media="all" />
+  <script src="modernizr.custom.js"></script>
+  <style>
+    
+    .template {
+      /* By default, hide the template for browsers with no support for CSS Regions. */
+      display: none;
+    }
+    
+    /* Modernizr will set <html class="regions">, if CSS Regions are supported. */
+    .regions .template{
+      /* Reveal and use the template for browsers with CSS Regions. */
+      display: flex;
+      flex-flow: row wrap;
+      height: 100vh;
+      width: 80vw;
+      margin: 0 auto;
+    }
+    
+    .regions article{
+      -webkit-flow-into: content;
+    }
+    
+    .regions .box{
+      -webkit-flow-from: content;
+      flex: 1 0 50%;
+      height: 50%;
+    }
+    
+  </style>
+</head>
+<body> 
+  
+  <article>
+    <h1>CSS Regions</h1>
+    <p>
+      With Regions, you can use CSS properties to flow content into existing styled containers, specifying any container order you choose, regardless of their position on the page. Create visually stunning responsive layouts for mobile and desktop content today.
+    </p>
+    <p>
+      By allowing text to automatically flow from one box to another, CSS Regions bring the power and flexibility of complex layout to the web. This makes it easier to build pages with layout similar to traditional newspapers and magazines, but it goes beyond that.
+    </p>
+    <p>
+      Regions work by disconnecting the visual rendering of elements from their order in the DOM. This gives a hint to a potential new use case – building adaptive UI for web applications. I do emphasize on the adaptive term because this accounts for the user and device context.
+    </p>
+  </article>
+  
+  <div class="template">
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  
+  <script>
+  
+  // STEP 1
+  // Uncomment the line below to all named flows on this page:
+  var allFlows = document.webkitGetNamedFlows();
+  
+  
+  // STEP 2
+  // Get the 'content' named flow:
+  var flow = allFlows['content'];
+  
+  
+  // BONUS
+  // Inspect the NamedFlow instance in the browser console and see what's inside
+  console.dir(flow);
+  
+  
+  // BONUS
+  // Get a reference to all the regions associated with this flow
+  var regions = flow.getRegions(); console.log('regions', regions);
+  
+  
+  // BONUS
+  // Get a reference to the content
+  var content = flow.getContent(); console.log('content', content)
+  
+  // STEP 3
+  // Uncomment the block below to listen for the 'region overset change' event.
+  flow.addEventListener('webkitregionoversetchange', function(){
+    
+    // Event dispatched whenever content flows into a new region, or a region becomes empty.
+    // No, it's not the longest event name ever. This is: webkitcurrentplaybacktargetiswirelesschanged
+    
+    // The 'flow.overset' property is 'true' if more regions are required to fit the content
+    console.log('Do need more regions? ', flow.overset)
+    
+    // STEP 4
+    // Uncomment the block below to handle adding or removing regions.
+    
+        if (flow.overset){
+          addMoreRegions();
+        } else {
+          removeEmptyRegions();
+        }
+    
+  })
+  
+  /* We'll just clone the last region and add it to the template. */
+  function addMoreRegions(){
+    var template = document.querySelector('.template');
+    var lastRegion = document.querySelector('.box:last-child');
+    var clone = lastRegion.cloneNode();
+    
+    template.appendChild(clone);
+  }
+  
+  function removeEmptyRegions(){
+    // Get an array of all the regions associated with our flow
+    var regions = flow.getRegions();
+    
+    // The 'firstEmptyRegionIndex' property indicates the index 
+    // of the first region which has no content flowing in it. (-1 if no empty regions)
+    if (flow.firstEmptyRegionIndex > -1) {
+      
+      regions[flow.firstEmptyRegionIndex].remove();
+    }
+  }
+  
+  // OPTIONAL:
+  // Force a 'region overset change' event on page load to do a first pass,
+  // in case the named flow is already overset
+  flow.dispatchEvent(new Event('webkitregionoversetchange'));
+  
+  </script>
+  
+</body>
+</html>

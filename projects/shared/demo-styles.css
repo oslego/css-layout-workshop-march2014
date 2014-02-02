@@ -164,3 +164,14 @@ html[class~=no-regions]::before{
   background: #eee;
   border: 5px solid white;
 }
+
+#regions-cssom .box{
+  padding: 1.5em;
+  background: #eee;
+  border: 5px solid white;
+}
+
+#regions-cssom body{
+   padding: 0;
+}
+
