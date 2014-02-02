@@ -175,3 +175,7 @@ html[class~=no-regions]::before{
    padding: 0;
 }
 
+#regions-breaking .news{
+  font-size: 1.5em;
+}
+

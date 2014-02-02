@@ -1,0 +1,56 @@
+<!doctype html>
+<html id='regions-breaking' class="reg">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Regions: newspaper layout</title>
+  <base href="../shared/" />
+  <link rel="stylesheet" href="demo-styles.css" media="all" />
+  <script src="modernizr.custom.js"></script>
+  <style>
+    
+    .breaking-news{
+      color: crimson;
+    }
+    
+    /* Modernizr will set <html class="regions">, if CSS Regions are supported. */
+    .regions .breaking-news{
+      /* STEP 1 */
+      /* Set -webkit-flow-into: breaking; to collect .breaking-news elements into a named flow */
+      -webkit-flow-into: breaking;
+    }
+    
+    /* Creating ::after psedo-element to serve as region */
+    .regions h1::after{
+      /* STEP 2 */
+      /* Set -webkit-flow-from: breaking; to render content form the named flow */
+      -webkit-flow-from: breaking;
+      
+      margin: 1em;
+      display: block;
+    }
+    
+  </style>
+</head>
+  <body>
+  
+  <h1>News stream</h1>
+  
+  <h2>World</h2>
+  <ul class="news">
+    <li class="breaking-news">Volcano erupts at North Pole</li>
+    <li>Popular singer does nothing newsworthy</li>
+    <li>Martians abduct popular singer</li>
+    <li class="breaking-news">Life discovered on Mars</li>
+    <li>"The Earth is flat!", claims scientist</li>
+    <li class="breaking-news">Heavy snowfall in Hawaii</li>
+  </ul>
+
+  <h2>Sport</h2>
+  <ul class="news">
+    <li>Golf tournament still boring</li>
+    <li>Football player scores goal</li>
+    <li class="breaking-news">Jamaican bobsled team qualifies for Olympics</li>
+  </ul>
+  
+</body>
+</html>
