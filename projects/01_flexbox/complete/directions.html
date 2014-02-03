@@ -2,7 +2,7 @@
 <html class="flexbox flexbox-directions">
 <head>
   <title>Flexbox: directions, axes, alignment</title>
-  <base href="../shared/" />
+  <base href="../../shared/" />
   <link rel="stylesheet" href="demo-styles.css" media="all" />
   <style>
   
@@ -13,11 +13,11 @@
   .container {
     /* STEP 1 */
     /* Set display: flex; to turn the element into a flex-container. */
-    display: ;
+    display: flex;
     
     /* STEP 2 */
     /* Set flex-direction: column; to make flex-items stack one on top of the other. */
-    flex-direction: ;
+    flex-direction: column;
 
     /* BONUS */
     /* Set flex-direction: column-reverse; to invert the stacking order. */
@@ -25,16 +25,16 @@
     /* STEP 3 */
     /* Set flex-direction: row; to make flex-items show on a single row, one after another. */
     /* If no flex-direction is specified, this is the browser's default. */
-    flex-direction: ;
+    flex-direction: row;
     
     /* STEP 4 */
     /* Set justify-content: center; 
     to center flex-items along the flex direction, AKA main axis. */
-    justify-content: ;
+    justify-content: center;
     
     /* STEP 5 */
     /* Set justify-content: flex-end; to position flex-items from the END of the main axis. */
-    justify-content: ;
+    justify-content: flex-end;
     
     /* BONUS */
     /* Try justify-content: flex-start; to position flex-items from the START of the main axis. */
@@ -42,20 +42,20 @@
     
     /* STEP 6 */
     /* Set justify-content: space-between; to position flex-items equally spaced-out along the main axis. */
-    justify-content: ;
+    justify-content: space-between;
     
     /* STEP 7 */
     /* Set height: 50%; to see how flex-items stretch vertically to fit. */
     /* When flex-items do not have a specific height (height is auto), stretching is the default behavior. */
-    height: ;
+    height: 50%;
     
     /* STEP 8 */
     /* Set align-items: center; to center flex-items along the cross-axis (perpendicular to main-axis, or flex-direction). */
-    align-items: ;
+    align-items: center;
     
     /* STEP 9 */
     /* Set align-items: flex-end; to align flex-items towards the END of the the cross-axis. */
-    align-items: ;
+    align-items: flex-end;
     
     /* BONUS */
     /* Try align-items: flex-start; to align flex-items towards the START of the the cross-axis. */
@@ -64,7 +64,7 @@
     /* Set align-items: stretch; to make flex-items stretch to fill all availabe space on the crss-axis. */
     /* IMPORTANT: If the flex-items have specific dimensions along the cross-axis (height in this case), 
        they will not stretch. Set height: auto; on the flex-items to get this effect. */
-    align-items: ;
+    align-items: stretch;
     
     background-color: #F0E9D6;
   }
@@ -72,7 +72,7 @@
   .container div{
     /* STEP 11 */
     /* Set flex: 1 0 auto; to make flex-items "flex". */
-    flex: ;
+    flex: 1 0 auto;
   }
   
   </style>

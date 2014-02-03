@@ -2,31 +2,31 @@
 <html class="flexbox flexbox-pagination">
 <head>
   <title>Flexbox: pagination</title>
-  <base href="../shared/" />
+  <base href="../../shared/" />
   <link rel="stylesheet" href="demo-styles.css" media="all" />
   <style>
   
   nav{
     /* STEP 1 */
     /* Set display: flex; to turn the element into a flex-container. */
-    display: ;
+    display: flex;
     
     /* STEP 2 */
     /* Set flex-flow: row wrap; to allow flex-items to wrap to the next row. */
     /* When flex-items can't all fit on the same row, some will shift to the next row. */
-    flex-flow: ;
+    flex-flow: row wrap;
     
     /* STEP 3 */
     /* Set justify-content: center; to align flex-items to the center of the row (main axis). */
-    justify-content: ;
+    justify-content: center;
     
     /* STEP 4 */
     /* Set justify-content: space-around; to distribute free space around all flex-items (includes the ends). */
-    justify-content: ;
+    justify-content: space-around;
     
     /* STEP 5 */
     /* Set justify-content: space-between; to distribute free space between all flex-items (ignores the ends). */
-    justify-content: ;
+    justify-content: space-between;
   }
   
   nav a{
@@ -38,7 +38,7 @@
     nav a:last-child{
       /* STEP 6 */
       /* Set order: -1; to shift the last flex-item before all others */
-      order: ;
+      order: -1;
 
       text-align: right;
     }
@@ -46,15 +46,14 @@
     nav a:first-child{
       /* STEP 7 */
       /* Set order: -1; to shift the first flex-item before the already shifted last one */
-      order: ;
+      order: -1;
     }
     
     nav a:last-child,
     nav a:first-child{
       /* STEP 8 */
       /* Set width: 50%; to use all space on the current row and force other flex-items wrap to the next row. */
-      width: ;
-      
+      width: 50%;
       margin-bottom: 1em;
     }
     

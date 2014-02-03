@@ -3,35 +3,35 @@
 <head>
   <meta charset="UTF-8"/>
   <title>Flexbox: online shop layout</title>
-  <base href="../shared/" />
+  <base href="../../shared/" />
   <link rel="stylesheet" href="demo-styles.css" media="all" />
   <style>
   
   .container {
     /* STEP 1 */
     /* Set display: flex; to turn the element into a flex-container. */
-    display: ;
+    display: flex;
     
     /* STEP 2 */
     /* Set flex-flow: row wrap; to arrange flex-items on a row, 
        and allow them to wrap if they don't fit */
-    flex-flow: ;
+    flex-flow: row wrap;
   }
   
   .box{
     /* STEP 3 */
     /* Set flex: 1 0 200px; to evenly distribute available space to flex-items,
        but give them a flex-basis (min-width) of 200px. */
-    flex: ;
+    flex: 1 0 200px;
     
     /* STEP 4 */
     /* Set display: flex; to turn turn the flex-item into a flex-container for its children */
-    display: ;
+    display: flex;
     
     /* STEP 5 */
     /* Set flex-flow: column nowrap; to arrange the child flex-items on a column, 
        and don't allow them to wrap if they don't fit */
-    flex-flow: ;
+    flex-flow: column wrap;
     
     margin: 1em;
   }
@@ -40,7 +40,7 @@
     /* STEP 6 */
     /* Set align-self: center; to align the image to the center on the cross axis
        (cross-axis is horizontal in this case, because of flex-flow: column;) */
-    align-self: ;
+    align-self: center;
     
     width: 180px;
     margin-bottom: 1em;
@@ -49,29 +49,29 @@
   .box .buy{
     /* STEP 7 */
     /* Set align-self: center; to align to the center on the cross axis (horizontal) */
-    align-self: ;
+    align-self: center;
     
     /* STEP 8 */
     /* Set margin-top: auto; to pin the buy button to the bottom. */
     /* Makes it look even across boxes, because all boxes are equal height. */
-    margin-top: ;
+    margin-top: auto;
   }
   
   .box:last-child {
     /* BONUS: */
     /* Set order: -1; to shift the last flex-item ahead of all others. */
-    order: ;
+/*    order: -1;*/
     
     /* BONUS: */
     /* Set min-width: -webkit-calc(100% - 2em); so the element uses all space on its row. */
     /* NOTE: using calc() to remove 2em of margin (left+right) that is set on all .box elements. */
-    min-width: ;
+/*    min-width: calc(100% - 2em);*/
   }
   
   .box h2, 
   .box .price {
     /* BONUS: Set order: -1; to shift the title and price ahead of the image. */
-    order: ;
+/*    order: -1;*/
   }
   
   </style>

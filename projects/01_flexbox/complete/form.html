@@ -2,35 +2,35 @@
 <html class="flexbox flexbox-form">
 <head>
   <title>Flexbox: flex, align, order</title>
-  <base href="../shared/" />
+  <base href="../../shared/" />
   <link rel="stylesheet" href="demo-styles.css" media="all" />
   <style>
   
   form {
     /* STEP 1 */
     /* Set display: flex; to turn the element into a flex-container. */
-    display: ;
+    display: flex;
     
     /* STEP 2 */
     /* Set align-items: center; to align flex-items to the center of the cross-axis (vertical) */
-    align-items: ;
+    align-items: center;
   }
   
   input[type="email"]{
     /* STEP 3 */
     /* Set flex: 1 0 250px; to make the input field absorb all unused space, but use a min-width of 250px */
-    flex: ;
+    flex: 1 0 250px;
     
     /* STEP 4 */
     /* Set margin: 0 1em; to leave a gap between the input and its siblings. */
-    margin: ;
+    margin: 0 1em;
     /* Observe how the input field auto-sizes so everything still fits inside the flex-container */
   }
   
   input[type="submit"]{
     /* STEP 5 */
     /* Set align-self: stretch; to make only this flex-item stretch on the cross-axis (vertical) */
-    align-self: ;
+    align-self: stretch;
   }
 
   </style>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <title>Regions: CSS Object Model</title>
-  <base href="../shared/" />
+  <base href="../../shared/" />
   <link rel="stylesheet" href="demo-styles.css" media="all" />
   <script src="modernizr.custom.js"></script>
   <style>
@@ -59,48 +59,47 @@
   
   // STEP 1
   // Uncomment the line below to all named flows on this page:
-  // var allFlows = document.webkitGetNamedFlows();
+  var allFlows = document.webkitGetNamedFlows();
   
   
   // STEP 2
   // Get the 'content' named flow:
-  // var flow = allFlows['content'];
+  var flow = allFlows['content'];
   
   
   // BONUS
   // Inspect the NamedFlow instance in the browser console and see what's inside
-  // console.dir(flow);
+  console.dir(flow);
   
   
   // BONUS
   // Get a reference to all the regions associated with this flow
-  // var regions = flow.getRegions(); console.log('regions', regions);
+  var regions = flow.getRegions(); console.log('regions', regions);
   
   
   // BONUS
   // Get a reference to the content
-  // var content = flow.getContent(); console.log('content', content)
+  var content = flow.getContent(); console.log('content', content)
   
   // STEP 3
   // Uncomment the block below to listen for the 'region overset change' event.
-  /*
-    flow.addEventListener('webkitregionoversetchange', function(){
+  flow.addEventListener('webkitregionoversetchange', function(){
     
-      // Event dispatched whenever content flows into a new region, or a region becomes empty.
-      // No, it's not the longest event name ever. This is: webkitcurrentplaybacktargetiswirelesschanged
+    // Event dispatched whenever content flows into a new region, or a region becomes empty.
+    // No, it's not the longest event name ever. This is: webkitcurrentplaybacktargetiswirelesschanged
     
-      // The 'flow.overset' property is 'true' if more regions are required to fit the content
-      console.log('Do need more regions? ', flow.overset)
+    // The 'flow.overset' property is 'true' if more regions are required to fit the content
+    console.log('Do need more regions? ', flow.overset)
     
-      // STEP 4
-      // Uncomment the methods below to handle adding or removing regions.
-      if (flow.overset){
-        // addMoreRegions();
-      } else {
-        // removeEmptyRegions();
-      }
-    })
-  */  
+    // STEP 4
+    // Uncomment the block below to handle adding or removing regions.
+    if (flow.overset){
+      addMoreRegions();
+    } else {
+      removeEmptyRegions();
+    }
+    
+  })
   
   /* We'll just clone the last region and add it to the template. */
   function addMoreRegions(){
@@ -126,7 +125,7 @@
   // OPTIONAL:
   // Force a 'region overset change' event on page load to do a first pass,
   // in case the named flow is already overset
-  // flow.dispatchEvent(new Event('webkitregionoversetchange'));
+  flow.dispatchEvent(new Event('webkitregionoversetchange'));
   
   </script>
   
