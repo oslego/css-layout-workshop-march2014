@@ -1,0 +1,12 @@
+{
+  "name": "workshop",
+  "author": "Razvan Caliman",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
