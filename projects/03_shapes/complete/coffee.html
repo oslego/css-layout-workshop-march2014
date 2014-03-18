@@ -6,27 +6,31 @@
   <base href="../../shared/" />
   <link rel="stylesheet" href="demo-styles.css" media="all" />
   <style>
-    
+
     .coffee-cup{
       /* STEP 1 */
       /* Set shape-outside: circle(50%, 50%, 200px); to wrap the outside content around a circle. */
       /* The parameters mean: x, y for the circle center (50%, 50%) and the radius (200px). */
       shape-outside: circle(50%, 50%, 200px);
-      
+
+      /* NOTE: The updated syntax as of Chrome 34 will be circle(200px at 50% 50%) */
+
       float: left;
       width: 400px;
       height: 400px;
     }
-    
+
     .coffee-stain{
       /* STEP 2 */
       /* Set shape-inside: circle(50%, 50%, 150px); to wrap the inside content around a circle. */
       shape-inside: circle(50%, 50%, 150px);
 
+      /* NOTE: The updated syntax as of Chrome 34 will be circle(150px at 50% 50%) */
+
       /* STEP 3 */
       /* Set shape-padding: 1.6em; to leave a gap between the shape and the content. */
       shape-padding: 1.6em;
-      
+
       /* STEP 4 */
       /* Set shape-outside: circle(50%, 50%, 150px); to wrap the outside content around a circle. */
       shape-outside: circle(50%, 50%, 150px);
@@ -35,11 +39,11 @@
       width: 300px;
       height: 300px;
     }
-    
+
   </style>
 </head>
   <body>
-  
+
   <article>
     <h1>Basic CSS Shapes</h1>
     <img src="images/espresso.png" alt="" class="coffee-cup" />
@@ -51,6 +55,6 @@
       All this is about to change with the implementation of CSS Shapes, a new CSS feature which allows web designers to wrap content inside and around custom shapes. Shapes are defined in simple, practical and reusable ways, and, unlike most CSS hacks that just simulate shapes, they can affect the entire layout of a web page.
     </p>
   </article>
-  
+
 </body>
 </html>
